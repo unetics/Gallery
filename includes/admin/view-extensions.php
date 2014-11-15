@@ -13,18 +13,8 @@ if ( 'yes' === $show_message ) {
 }
 
 $tagline = apply_filters( 'foogallery_admin_extensions_tagline', sprintf( __( 'Extensions make %s even more awesome, without bloating the core plugin.', 'foogallery' ), foogallery_plugin_name() ) );
-$show_foobot = apply_filters( 'foogallery_admin_show_foobot', true );
 ?>
 <style>
-	.foogallery-badge-foobot {
-		position: absolute;
-		top: 5px;
-		right: 0;
-		background: url(<?php echo FOOGALLERY_URL; ?>assets/foobot_small.png) no-repeat;
-		width: 82px;
-		height: 150px;
-		z-index: 100;
-	}
 	.foogallery-text {
 		font-size: 18px;
 		margin: 10px 0;
@@ -45,8 +35,6 @@ if ( $has_errors ) { ?>
 	<h1><?php printf( __( '%s Extensions', 'foogallery' ), foogallery_plugin_name() ); ?><span class="spinner"></span></h1>
 
 	<div class="foogallery-text"><?php echo $tagline; ?></div>
-	<?php if ( $show_foobot ) { ?><div class="foogallery-badge-foobot"></div><?php } ?>
-
 	<h2 class="foo-nav-tabs nav-tab-wrapper">
 	<?php
 	foreach ( $categories as $category_slug => $category ) {

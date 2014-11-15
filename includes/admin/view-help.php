@@ -4,7 +4,6 @@ $info = $instance->get_plugin_info();
 $title = apply_filters( 'foogallery_admin_help_title', sprintf( __( 'Welcome to %s %s', 'foogallery' ), foogallery_plugin_name(), $info['version'] ) );
 $tagline = apply_filters( 'foogallery_admin_help_tagline', sprintf( __( 'Thank you for choosing %s, the most intuitive and extensible gallery creation and management tool ever created for WordPress!', 'foogallery' ), foogallery_plugin_name() ) );
 $link = apply_filters( 'foogallery_admin_help_tagline_link', ' - <a href="http://foo.gallery" target="_blank">' . __( 'Visit our homepage', 'foogallery' ) . '</a>' );
-$show_foobot = apply_filters( 'foogallery_admin_show_foobot', true );
 $show_tabs = apply_filters( 'foogallery_admin_help_show_tabs', true );
 $show_extensions_section = apply_filters( 'foogallery_admin_help_show_extensions_section', true );
 ?>
@@ -12,15 +11,6 @@ $show_extensions_section = apply_filters( 'foogallery_admin_help_show_extensions
 	.about-wrap img.foogallery-help-screenshot {
 		float:right;
 		margin-left: 20px;
-	}
-
-	.foogallery-badge-foobot {
-		position: absolute;
-		top: 15px;
-		right: 0;
-		background:url(<?php echo FOOGALLERY_URL; ?>assets/foobot.png) no-repeat;
-		width:109px;
-		height:200px;
 	}
 	.feature-section h2 {
 		margin-top: 0;
@@ -32,9 +22,6 @@ $show_extensions_section = apply_filters( 'foogallery_admin_help_show_extensions
 	<div class="about-text">
 		<?php echo $tagline. $link; ?>
 	</div>
-	<?php if ( $show_foobot ) { ?>
-	<div class="foogallery-badge-foobot"></div>
-	<?php } ?>
 	<?php if ( $show_tabs ) { ?>
 	<h2 class="nav-tab-wrapper">
 		<a class="nav-tab nav-tab-active" href="#">

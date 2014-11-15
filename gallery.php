@@ -1,11 +1,15 @@
 <?php
-/**
- * @wordpress-plugin
- * Plugin Name: Gallery _ps
- * Plugin URI:  https://webcreationcentre.com.au/
- * Description: Better Image Galleries for WordPress
- * Version:     1.0.2
- */
+/*
+Plugin Name:       Gallery _ps
+Plugin URI:        https://github.com/unetics/Gallery
+Description:       Better Image Galleries for WordPress
+Version:           1.0.2
+Author:            Mitchell Bray
+Text Domain:       Builder
+GitHub Plugin URI: https://github.com/unetics/Gallery
+GitHub Branch:     master
+*/
+
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
