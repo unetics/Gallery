@@ -35,7 +35,7 @@ define( 'FOOGALLERY_VERSION', '1.1.8.2' );
 if ( ! class_exists( 'FooGallery_Plugin' ) ) {
 
 	require_once( FOOGALLERY_PATH . 'includes/foopluginbase/bootstrapper.php' );
-
+	require_once( FOOGALLERY_PATH . 'widget/widget.php' );
 	/**
 	 * FooGallery_Plugin class.
 	 *

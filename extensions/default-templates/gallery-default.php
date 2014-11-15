@@ -3,7 +3,7 @@
  * FooGallery default responsive gallery template
  */
 global $current_foogallery;
-print_r($current_foogallery);
+// print_r($current_foogallery);
 global $current_foogallery_arguments;
 $args = foogallery_gallery_template_setting( 'thumbnail_dimensions', array() );
 $link = foogallery_gallery_template_setting( 'thumbnail_link', 'image' );
