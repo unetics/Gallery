@@ -42,5 +42,4 @@ class gallery_Widget extends WP_Widget{
 	    echo do_shortcode("[foogallery id='".$instance['id']."']");
 	}
 }
-
 add_action( 'widgets_init', create_function('', 'return register_widget("gallery_Widget");') );

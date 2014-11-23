@@ -3,39 +3,30 @@
 Plugin Name:       Gallery _ps
 Plugin URI:        https://github.com/unetics/Gallery
 Description:       Better Image Galleries for WordPress
-Version:           1.0.2
+Version:           1.0.3
 Author:            Mitchell Bray
 Text Domain:       Builder
 GitHub Plugin URI: https://github.com/unetics/Gallery
 GitHub Branch:     master
 */
 
-
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+if ( ! defined( 'WPINC' ) ) { die; }
 
 define( 'FOOGALLERY_SLUG', 'foogallery' );
 define( 'FOOGALLERY_PATH', plugin_dir_path( __FILE__ ) );
+define( 'PATH', plugin_dir_path( __FILE__ ) );
 define( 'FOOGALLERY_URL', plugin_dir_url( __FILE__ ) );
 define( 'FOOGALLERY_FILE', __FILE__ );
-define( 'FOOGALLERY_VERSION', '1.1.8.2' );
+define( 'VERSION', '1.0.2' );
 
 /**
  * FooGallery_Plugin class
- *
- * @package   FooGallery
- * @author    Brad Vincent <brad@fooplugins.com>
- * @license   GPL-2.0+
- * @link      https://github.com/fooplugins/foogallery
- * @copyright 2013 FooPlugins LLC
  */
 
 if ( ! class_exists( 'FooGallery_Plugin' ) ) {
-
-	require_once( FOOGALLERY_PATH . 'includes/foopluginbase/bootstrapper.php' );
-	require_once( FOOGALLERY_PATH . 'widget/widget.php' );
+	require_once( PATH . 'includes/foopluginbase/bootstrapper.php' );
+	require_once( PATH . 'widget/widget.php' );
 	/**
 	 * FooGallery_Plugin class.
 	 *
@@ -50,7 +41,6 @@ if ( ! class_exists( 'FooGallery_Plugin' ) ) {
 			if ( ! isset(self::$instance) && ! (self::$instance instanceof FooGallery_Plugin) ) {
 				self::$instance = new FooGallery_Plugin();
 			}
-
 			return self::$instance;
 		}
 
@@ -65,7 +55,7 @@ if ( ! class_exists( 'FooGallery_Plugin' ) ) {
 			register_activation_hook( __FILE__, array( 'FooGallery_Plugin', 'activate' ) );
 
 			//init FooPluginBase
-			$this->init( FOOGALLERY_FILE, FOOGALLERY_SLUG, FOOGALLERY_VERSION, 'FooGallery' );
+			$this->init( FOOGALLERY_FILE, FOOGALLERY_SLUG, VERSION, 'FooGallery' );
 
 			//setup text domain
 			$this->load_plugin_textdomain();
@@ -154,24 +144,14 @@ if ( ! class_exists( 'FooGallery_Plugin' ) ) {
 		private static function get_blog_ids() {
 
 			if ( function_exists( 'wp_get_sites' ) ) {
-
 				$sites = wp_get_sites();
 				$blog_ids = array();
 				foreach ( $sites as $site ) {
 					$blog_ids[] = $site['blog_id'];
 				}
 				return $blog_ids;
-			} else {
-				//pre WP 3.7 - do this the old way!
-				global $wpdb;
-
-				// get an array of blog ids
-				$sql = "SELECT blog_id FROM $wpdb->blogs WHERE archived = '0' AND spam = '0' AND deleted = '0'";
-
-				return $wpdb->get_col( $sql );
-			}
+			} 
 		}
 	}
 }
-
 FooGallery_Plugin::get_instance();

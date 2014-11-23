@@ -84,7 +84,7 @@ if ( ! class_exists( 'FooGallery_Admin_Gallery_Editor' ) ) {
 				$mce_css .= ',';
 			}
 
-			$mce_css .= FOOGALLERY_URL . 'css/admin-tinymce.css'; // . urlencode( '?v=' + FOOGALLERY_VERSION );
+			$mce_css .= FOOGALLERY_URL . 'css/admin-tinymce.css'; 
 
 			return $mce_css;
 		}

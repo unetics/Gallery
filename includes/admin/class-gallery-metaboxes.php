@@ -360,13 +360,13 @@ if ( ! class_exists( 'FooGallery_Admin_Gallery_MetaBoxes' ) ) {
 
 				//zeroclipboard needed for copy to clipboard functionality
 				$url = FOOGALLERY_URL . 'lib/zeroclipboard/ZeroClipboard.min.js';
-				wp_enqueue_script( 'foogallery-zeroclipboard', $url, array('jquery'), FOOGALLERY_VERSION );
+				wp_enqueue_script( 'foogallery-zeroclipboard', $url, array('jquery'));
 
 				//include any admin js required for the templates
 				foreach ( foogallery_gallery_templates() as $template ) {
 					$admin_js = foo_safe_get( $template, 'admin_js' );
 					if ( $admin_js ) {
-						wp_enqueue_script( 'foogallery-gallery-admin-' . $template['slug'], $admin_js, array('jquery'), FOOGALLERY_VERSION );
+						wp_enqueue_script( 'foogallery-gallery-admin-' . $template['slug'], $admin_js, array('jquery'));
 					}
 				}
 			}

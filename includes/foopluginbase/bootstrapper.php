@@ -2,11 +2,6 @@
 /*
  * Foo Plugin Base Bootsrapper
  * Includes all the files needed for the Foo Plugin Base framework
- *
- * Version: 2.1
- * Author: Brad Vincent
- * Author URI: http://fooplugins.com
- * License: GPL2
 */
 
 //include the framework

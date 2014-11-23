@@ -73,7 +73,7 @@ if ( ! class_exists( 'FooGallery_Admin_Columns' ) ) {
 			if ( $this->include_clipboard_script ) {
 				//zeroclipboard needed for copy to clipboard functionality
 				$url = FOOGALLERY_URL . 'lib/zeroclipboard/ZeroClipboard.min.js';
-				wp_enqueue_script( 'foogallery-zeroclipboard', $url, array('jquery'), FOOGALLERY_VERSION );
+				wp_enqueue_script( 'foogallery-zeroclipboard', $url, array('jquery'));
 
 				?>
 				<script>
